@@ -124,7 +124,7 @@ exports.signIn = async (req, res) => {
     console.error(error);
     return res.status(500).json({
       success: false,
-      message: "We're facing some issues! Please try later!",
+      message: error.message,
     });
   }
 };
