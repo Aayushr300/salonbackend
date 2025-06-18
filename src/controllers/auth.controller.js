@@ -53,7 +53,7 @@ exports.signIn = async (req, res) => {
         httpOnly: true,
 
         sameSite: "None",
-        secure: process.env.NODE_ENV == "production",
+        secure: true,
         path: "/",
       };
 
@@ -65,7 +65,7 @@ exports.signIn = async (req, res) => {
         httpOnly: true,
 
         sameSite: "none",
-        secure: process.env.NODE_ENV == "production",
+        secure: true,
         path: "/",
       };
 
@@ -88,7 +88,7 @@ exports.signIn = async (req, res) => {
         expires: new Date(Date.now() + parseInt(CONFIG.COOKIE_EXPIRY_REFRESH)),
 
         sameSite: "None",
-        secure: process.env.NODE_ENV == "production",
+        secure: true,
         path: "/",
       });
 
