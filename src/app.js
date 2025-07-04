@@ -52,6 +52,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
 );
+app.set("trust proxy", true);
 
 // app.use(cors(corsOptions));
 app.use(cookieParser());
