@@ -67,7 +67,7 @@ exports.signIn = async (req, res) => {
         expires: refreshTokenExpiry,
         httpOnly: true,
 
-        sameSite: "none",
+        sameSite: "None",
         secure: true,
         path: "/",
       };
@@ -137,9 +137,9 @@ exports.signOut = async (req, res) => {
     const cookieOptions = {
       expires: new Date(Date.now()),
       httpOnly: true,
-      domain: CONFIG.FRONTEND_DOMAIN_COOKIE,
-      sameSite: false,
-      secure: process.env.NODE_ENV == "production",
+
+      sameSite: "None",
+      secure: true,
       path: "/",
     };
 
@@ -271,6 +271,8 @@ exports.getTenants = async (req, res) => {
       from,
       to
     );
+
+    console.log("Tenats data not found");
 
     return res.status(200).json(result);
   } catch (error) {
